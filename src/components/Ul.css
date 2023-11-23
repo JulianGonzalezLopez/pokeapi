@@ -1,9 +1,3 @@
-.container-lista{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-}
-
 .lista{
     overflow-y: scroll;
     max-height: 500px;

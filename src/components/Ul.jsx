@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import ModalPokemon from "./ModalPokemon";
 import "./Ul.css";
+import ModalInfoExtra from "./ModalInfoExtra";
+import ListaPokemones from "./ListaPokemones";
 
 function Ul() {
   const [pokemones, setPokemones] = useState([]);
   const [info, setInfo] = useState(false);
   const [pokemonActual, setPokemonActual] = useState("");
+  const [infoExtra,setInfoExtra] = useState(false);
+
   useEffect(() => {
     async function fetchData() {
       const res = await fetch(
@@ -35,36 +39,14 @@ function Ul() {
         }
       })
     );
-    console.log(pokemones);
   }
 
   return (
-    <div className="container-lista">
-      <div className="lista">
-        {pokemones.map((pok, index) => (
-          <div key={index}>
-            <button
-              onClick={() => {
-                addLikes(index);
-              }}
-            >
-              {" "}
-              <span>{pok.name}</span> ❤️ {pok.likes}
-            </button>
-            <button
-              className="more-info"
-              onClick={() => {
-                setInfo(!info);
-                setPokemonActual(pok.name);
-              }}
-            >
-              i
-            </button>
-          </div>
-        ))}
-      </div>
-      {info && <ModalPokemon n={pokemonActual}/>}
-    </div>
+    <>
+      {pokemones != [] ? <ListaPokemones pokemones={pokemones} setPokemonActual={setPokemonActual} setInfoExtra={setInfoExtra} addLikes={addLikes} info={info} setInfo={setInfo}/> : ""}
+      {info && <ModalPokemon n={pokemonActual} infoExtra ={infoExtra} setInfoExtra={setInfoExtra} className="poke-info"/>}
+      {infoExtra != "" && <ModalInfoExtra infoExtra ={infoExtra} setInfoExtra={setInfoExtra} className="extra-info"/>}
+    </>
   );
 }
 
