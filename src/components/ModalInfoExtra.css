@@ -4,15 +4,19 @@
     grid-template-rows: 10% repeat(3, 30%);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    min-height: 100%;
     justify-content: center;
     max-height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 
 .extra-info *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .extra-info > div{
@@ -31,6 +35,8 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .extra-info li{
@@ -65,16 +71,11 @@
 
 @media screen and (max-width: 800px) {
     .extra-info{
-        display: grid;
-        grid-template-columns: 100px;
-        grid-template-rows: repeat(7, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        display: flex;
+        flex-direction: column;
         max-width: 500px;
         overflow-y: scroll;
         border: 1px solid black;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
     }
 
     .extra-info div, .div1{
@@ -85,10 +86,15 @@
     .extra-info > .divTot{ 
         grid-area: 1 / 1 / 4 / 3; 
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center !important;
         height: 100%;
         width: 100%;
     }
+}
+
+@media screen and (max-width:350px) {
+    .extra-info{
+        overflow-y: visible;
+    }
+
 }

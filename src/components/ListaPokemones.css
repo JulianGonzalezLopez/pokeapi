@@ -30,3 +30,8 @@
 }
 
 
+@media screen and (max-width:350px) {
+    .lista{
+        height: 30vh;
+    }
+}
