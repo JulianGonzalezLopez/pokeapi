@@ -1,0 +1,32 @@
+.lista{
+    overflow-y: scroll;
+    max-height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-image: url("../assets/snorlax.jpg");
+    margin-right: 10px;
+}
+
+.lista div{
+    text-align: center;
+    margin: 2px;
+    width: 90%;
+}
+
+.lista div button span{
+    display: inline-block;
+    min-width: 80px;
+}
+
+.lista div button span::first-letter{
+    text-transform: capitalize;
+}
+
+.more-info{
+    max-width: 20px;
+}
+
+

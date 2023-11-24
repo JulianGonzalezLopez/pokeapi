@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import "./ModalPokemon.css"
+
+
+
 function ModalPokemon({n,infoExtra,setInfoExtra}){
 
     const [pokemon,setPokemon] = useState(null);
+    const [shiny, setShiny] = useState(false);
+    
 
     useEffect(() => {
         
@@ -31,21 +36,23 @@ function ModalPokemon({n,infoExtra,setInfoExtra}){
         
       }, [n]);
     
+
+
     if(pokemon == null) return <></>
     return(
         <div className="pokemon-card">
-            <img src={pokemon.sprites.front_default} alt="" className="div1"/>
-            <p className="div2">Nombre: {n}</p>
-            <div className="div3">
+            
+            <img onMouseEnter={()=>{setShiny(!shiny)}} onMouseLeave={()=>{setShiny(!shiny )}} src={shiny == false ? pokemon.sprites.front_default : pokemon.sprites.front_shiny} alt="" className="imagen-pokemon"/>
+            <p className="nombre-pokemon">Nombre: {n}</p>
+            <div className="tipos-pokemon">
                 <p>Tipo/s</p>
-                <div>
-                        
+                <div>     
                         {pokemon.types.map((tipo,indice)=>(
                         <button key={indice} onClick={()=>{setInfoExtra(`https://pokeapi.co/api/v2/type/${tipo.type.name}`)}}>{tipo.type.name}</button>
                     ))}
                 </div>
             </div>
-            <div className="div4">
+            <div className="habilidades-pokemon">
                 <p>Habilidad/es</p>
                 <div>
                     {console.log(infoExtra)}
@@ -58,5 +65,7 @@ function ModalPokemon({n,infoExtra,setInfoExtra}){
         </div>
     )
 }
+
+
 
 export default ModalPokemon;

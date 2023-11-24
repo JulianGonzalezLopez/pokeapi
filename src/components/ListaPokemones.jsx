@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-
+import "./ListaPokemones.css";
 
 
 function ListaPokemones({pokemones, setPokemonActual, setInfoExtra, addLikes, info, setInfo}){
