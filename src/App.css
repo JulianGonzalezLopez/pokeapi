@@ -22,6 +22,11 @@ main {
   grid-row-gap: 0px;
   justify-content: center;
   height: 80vh;
+  box-sizing: border-box;
+}
+
+main > *{
+  box-sizing: border-box;
 }
 
 .lista { grid-area: 1 / 1 / 2 / 2; }
@@ -46,11 +51,21 @@ footer * {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: fit-content;
+    justify-content: start;
+    height: max-content;
   }
-  .lista { grid-area: 1 / 1 / 2 / 2;}
-  .poke-info {grid-area: 2 / 1 / 3 / 2;}
-  .extra-info { grid-area: 3 / 1 / 4 / 2; }
+  .lista { 
+    grid-area: 1 / 1 / 2 / 2;
+    height: 30vh;
+    overflow:initial;
+  }
+  .poke-info {
+    grid-area: 2 / 1 / 3 / 2;
+    height: 30vh;
+  }
+  .extra-info { 
+    grid-area: 3 / 1 / 4 / 2;
+    height: 30vh;
+  }
   
 }
