@@ -39,6 +39,10 @@
     padding: 0;
 }
 
+.extra-info p{
+    margin: .5rem;
+}
+
 .extra-info li{
     list-style: none;
 }
@@ -73,11 +77,12 @@
     .extra-info{
         display: flex;
         flex-direction: column;
-        max-width: 500px;
-        overflow-y: scroll;
-        border: 1px solid black;
+        width: 100%;
+        height:fit-content;
+        text-align: center;
     }
 
+    
     .extra-info div, .div1{
         margin: 1rem;
     }
@@ -87,14 +92,10 @@
         grid-area: 1 / 1 / 4 / 3; 
         display: flex;
         align-items: center;
+        box-sizing: border-box;
         height: 100%;
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
-}
-
-@media screen and (max-width:350px) {
-    .extra-info{
-        overflow-y: visible;
-    }
-
 }

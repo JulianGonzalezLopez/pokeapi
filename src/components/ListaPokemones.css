@@ -30,9 +30,8 @@
 }
 
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:800px) {
     .lista{
-        min-height: 30vh;
-        overflow:scroll;
+        width: 100%;
     }
 }

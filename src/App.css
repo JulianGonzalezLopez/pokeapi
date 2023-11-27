@@ -45,8 +45,11 @@ footer * {
   color: white;
 }
 
+@media screen and (max-width:800px) {
+  *{
+    font-size: 1rem;
+  }
 
-@media screen and (max-width:350px) {
   main{
     display: flex;
     flex-direction: column;
