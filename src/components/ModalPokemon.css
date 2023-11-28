@@ -6,6 +6,8 @@
     grid-row-gap: 0px;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
     }
 
 .pokemon-card p{
@@ -18,6 +20,8 @@
 
 .pokemon-card img{
     margin: auto;
+    height: 100%;
+    width: auto;
 }
 
 .pokemon-card div{
@@ -28,6 +32,8 @@
     text-align: center;
 }
 .imagen-pokemon { grid-area: 1 / 1 / 2 / 2; }
-.nombre-pokemon { grid-area: 2 / 1 / 3 / 2; }
+.nombre-pokemon { grid-area: 2 / 1 / 3 / 2;
+    justify-content: start;
+}
 .tipos-pokemon { grid-area: 3 / 1 / 4 / 2; }
-.habilidades-pokemon { grid-area: 4 / 1 / 5 / 2; }
+.habilidades-pokemon { grid-area: 4 / 1 / 5 / 2;}

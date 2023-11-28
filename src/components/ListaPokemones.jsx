@@ -7,14 +7,15 @@ function ListaPokemones({pokemones, setPokemonActual, setInfoExtra, addLikes, in
     return(
         <div className="lista">
         {pokemones.map((pok, index) => (
-          <div key={index}>
-            <button
+          <div className="container-main-more" key={index}>
+            <button className="main-info"
               onClick={() => {
                 addLikes(index);
               }}
             >
               {" "}
-              <span>{pok.name}</span> ❤️ {pok.likes}
+              <span className="name">{pok.name}</span>
+              <span className="likes">❤️ {pok.likes}</span>
             </button>
             <button
               className="more-info"
