@@ -1,10 +1,13 @@
 .extra-info{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 10% repeat(3, 30%);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    justify-content: center;
+    grid-template-rows: 10% repeat(2, 40%); */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* grid-column-gap: 0px;
+    grid-row-gap: 0px; */
+    justify-content: start;
     max-height: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -25,6 +28,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    width: 100%;
 }
 
 .divTot { 
@@ -49,6 +53,7 @@
 
 .extra-info h4{
     margin-top: 20px;
+    text-align: center;
 }
 
 .extra-info h4::first-letter{
@@ -72,6 +77,11 @@
     list-style-type:armenian;
 }
 
+@media screen and (max-width: 900px) {
+    li{
+        font-size: 1.5rem;
+    }
+}
 
 @media screen and (max-width: 800px) {
     .extra-info{

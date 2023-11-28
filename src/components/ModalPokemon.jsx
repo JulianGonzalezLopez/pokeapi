@@ -3,7 +3,7 @@ import "./ModalPokemon.css"
 
 
 
-function ModalPokemon({n,infoExtra,setInfoExtra}){
+function ModalPokemon({n,infoExtra,setInfoExtra, addLikes}){
 
     const [pokemon,setPokemon] = useState(null);
     const [shiny, setShiny] = useState(false);
@@ -13,7 +13,7 @@ function ModalPokemon({n,infoExtra,setInfoExtra}){
         
         async function fetchData() {
           const res = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${n}`
+            `https://pokeapi.co/api/v2/pokemon/${n.nombre}`
           );
           const data = await res.json();
           return data;
@@ -41,9 +41,11 @@ function ModalPokemon({n,infoExtra,setInfoExtra}){
     if(pokemon == null) return <></>
     return(
         <div className="pokemon-card">
-            
+            <div className="wrapper-img-button">
             <img onMouseEnter={()=>{setShiny(!shiny)}} onMouseLeave={()=>{setShiny(!shiny )}} src={shiny == false ? pokemon.sprites.front_default : pokemon.sprites.front_shiny} alt="" className="imagen-pokemon"/>
-            <p className="nombre-pokemon">Nombre: {n}</p>
+            <button onClick={()=>{addLikes(n.index)}}>❤️</button>
+            <p className="nombre-pokemon">Nombre: {n.nombre}</p>
+            </div>
             <div className="tipos-pokemon">
                 <p>Tipo/s</p>
                 <div>     
